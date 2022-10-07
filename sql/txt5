@@ -1,0 +1,30 @@
+create table person_info(
+name_ nvarchar2(20),
+id_ number,
+email nvarchar2(20),
+salary number
+);
+insert into person_info
+values('Narmin',1,'narmin@gmail.com',13500);
+insert into person_info
+values('Narmin',1,'narmin@gmail.com',13500);
+insert into person_info
+values('Narmin',1,'narmin@gmail.com',13500);
+insert into person_info
+values('Sevda',2,'sevda@gmail.com',12400);
+insert into person_info
+values('Sevda',2,'sevda@gmail.com',12400);
+insert into person_info
+values('Ali',3,'ali@gmail.com',25000);
+insert into person_info
+values('Ali',3,'ali@gmail.com',25000);
+insert into person_info
+values('Ali',3,'ali@gmail.com',25000);
+insert into person_info
+values('Ali',3,'ali@gmail.com',25000);
+insert into person_info
+values('Turkan',4,'turkan@gmail.com',32000);
+select*from person_info order by id_;
+
+select id_,email,salary,RANK() OVER (ORDER BY id_) my_rank from person_info;
+select id_,email,salary,DENSE_RANK() OVER (ORDER BY id_) my_rank from person_info;
